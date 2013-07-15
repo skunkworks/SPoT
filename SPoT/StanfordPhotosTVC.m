@@ -67,6 +67,13 @@
     return [NSString stringWithFormat:@"%d photos", [self.tags[tagName] count]];
 }
 
+// Gives the URL for a cell's image
+- (NSURL *)imageURLForRow:(NSUInteger)row
+{
+    NSString *tagName = self.rowTags[row];
+    return [FlickrFetcher urlForPhoto:self.tags[tagName][0] format:FlickrPhotoFormatSquare];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [self.tags count];
@@ -81,7 +88,7 @@
     cell.detailTextLabel.text = [self subtitleForRow:indexPath.row];
     
     // Get square image
-    NSData *data = [[NSData alloc] initWithContentsOfURL:[FlickrFetcher urlForPhoto:self.photos[indexPath.row] format:FlickrPhotoFormatSquare]];
+    NSData *data = [[NSData alloc] initWithContentsOfURL:[self imageURLForRow:indexPath.row]];
     UIImage *image = [[UIImage alloc] initWithData:data];
     cell.imageView.image = image;
     
