@@ -102,7 +102,7 @@
                 NSString *tagName = self.rowTags[indexPath.row];
                 NSArray *photosForTag = self.tags[tagName];
                 [segue.destinationViewController performSelector:@selector(setPhotos:) withObject:photosForTag];
-                [segue.destinationViewController setTitle:tagName];
+                [segue.destinationViewController setTitle:[tagName capitalizedString]];
             }
         }
     }
