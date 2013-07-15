@@ -62,4 +62,27 @@
     }
 }
 
+// When the bounds change, we need to automatically zoom so that as much of the photo is possible
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    
+    // Readjust our zoom scale so that the image view fits as much as possible in the scroll view
+    // Logic:
+    // 1. Find the scroll view's dimension ratio (width/height).
+    //    2. If the photo's width/height ratio is lesser -- photo is relatively taller than the scroll view -- fit by height.
+    //    3. If the photo's ratio is higher -- photo is relatively wider than scroll view -- fit by width.
+    CGFloat scrollViewRatio = self.scrollView.bounds.size.width / self.scrollView.bounds.size.height;
+    CGFloat imageViewRatio = self.imageView.bounds.size.width / self.imageView.bounds.size.height;
+    
+    CGFloat zoomScale;
+    if (imageViewRatio < scrollViewRatio) {
+        zoomScale = self.scrollView.frame.size.height / self.imageView.frame.size.height;
+    } else {
+        zoomScale = self.scrollView.frame.size.width / self.imageView.frame.size.width;
+    }
+
+    self.scrollView.zoomScale = zoomScale;
+}
+
 @end
