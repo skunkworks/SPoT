@@ -25,6 +25,10 @@
     [self.tableView reloadData];
 }
 
+- (NSString *)cellIdentifier {
+    return @"Stanford Photo";
+}
+
 // Key is the tag name, value is an array of Flickr photo metadata (as NSDictionary objects)
 - (NSDictionary *)tags {
     if (!_tags) {
@@ -49,7 +53,9 @@
         // We have to use a separate array to keep track of which tag corresponds to which row. We can't rely on
         // using the allKeys method of tags because NSDictionary doesn't guarantee that it will return the same order
         // each time it's invoked.
-        _rowTags = [self.tags allKeys];
+        _rowTags = [[self.tags allKeys] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+            return ([(NSString *)obj1 compare:(NSString *)obj2 options:NSOrderedAscending]);
+        }];
     }
     return _tags;
 }
@@ -79,22 +85,6 @@
     return [self.tags count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Stanford Photo" forIndexPath:indexPath];
-    
-    // Configure the cell...
-    cell.textLabel.text = [self titleForRow:indexPath.row];
-    cell.detailTextLabel.text = [self subtitleForRow:indexPath.row];
-    
-    // Get square image
-    NSData *data = [[NSData alloc] initWithContentsOfURL:[self imageURLForRow:indexPath.row]];
-    UIImage *image = [[UIImage alloc] initWithData:data];
-    cell.imageView.image = image;
-    
-    return cell;
-}
-
 - (void)viewDidLoad
 {
     self.photos = [FlickrFetcher stanfordPhotos];
@@ -102,7 +92,13 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
+    // Get the index path of the cell that pushed the segue
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    if (indexPath) {
+        if ([segue.identifier isEqualToString:@"Show Stanford Photo"]) {
+            
+        }
+    }
 }
 
 @end

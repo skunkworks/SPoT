@@ -20,6 +20,10 @@
     [self.tableView reloadData];
 }
 
+- (NSString *)cellIdentifier {
+    return @"Flickr Photo";
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -27,19 +31,29 @@
     return [self.photos count];
 }
 
+// Provides title for table cell
 - (NSString *)titleForRow:(NSUInteger)row
 {
-    return [self.photos[row][FLICKR_PHOTO_TITLE] description];
+    // abstract
+    return @"";
 }
 
+// Provides subtitle for table cell
 - (NSString *)subtitleForRow:(NSUInteger)row
 {
-    return [self.photos[row][FLICKR_PHOTO_OWNER] description];
+    // abstract
+    return @"";
+}
+
+// Returns the URL for the table view's cell's image photo. Can be overridden to provide a different photo
+- (NSURL *)imageURLForRow:(NSUInteger)row
+{
+    return [FlickrFetcher urlForPhoto:self.photos[0] format:FlickrPhotoFormatSquare];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Flickr Photo" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
     cell.textLabel.text = [self titleForRow:indexPath.row];

@@ -10,4 +10,9 @@
 
 @interface FlickrPhotoTVC : UITableViewController
 @property (strong, nonatomic) NSArray *photos; // of NSDictionary
+@property (strong, nonatomic) NSString *cellIdentifier;
+
+- (NSString *)titleForRow:(NSUInteger)row; // abstract
+- (NSString *)subtitleForRow:(NSUInteger)row; // abstract
+- (NSURL *)imageURLForRow:(NSUInteger)row;
 @end
