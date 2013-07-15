@@ -92,11 +92,18 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the index path of the cell that pushed the segue
+    // Get the index path of the cell that pushed the segue and make sure that the cell index path is valid
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
     if (indexPath) {
-        if ([segue.identifier isEqualToString:@"Show Stanford Photo"]) {
-            
+        // Make sure we have the right segue
+        if ([segue.identifier isEqualToString:@"Show Stanford Photos By Tag"]) {
+            // And finally set the photos that we want to display (i.e. photos with this tag)
+            if ([segue.destinationViewController respondsToSelector:@selector(setPhotos:)]) {
+                NSString *tagName = self.rowTags[indexPath.row];
+                NSArray *photosForTag = self.tags[tagName];
+                [segue.destinationViewController performSelector:@selector(setPhotos:) withObject:photosForTag];
+                [segue.destinationViewController setTitle:tagName];
+            }
         }
     }
 }

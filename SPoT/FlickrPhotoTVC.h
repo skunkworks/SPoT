@@ -12,7 +12,7 @@
 @property (strong, nonatomic) NSArray *photos; // of NSDictionary
 @property (strong, nonatomic) NSString *cellIdentifier;
 
-- (NSString *)titleForRow:(NSUInteger)row; // abstract
-- (NSString *)subtitleForRow:(NSUInteger)row; // abstract
+- (NSString *)titleForRow:(NSUInteger)row;
+- (NSString *)subtitleForRow:(NSUInteger)row;
 - (NSURL *)imageURLForRow:(NSUInteger)row;
 @end

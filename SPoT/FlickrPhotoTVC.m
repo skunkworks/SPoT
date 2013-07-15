@@ -34,15 +34,13 @@
 // Provides title for table cell
 - (NSString *)titleForRow:(NSUInteger)row
 {
-    // abstract
-    return @"";
+    return [self.photos[row][FLICKR_PHOTO_TITLE] description];
 }
 
 // Provides subtitle for table cell
 - (NSString *)subtitleForRow:(NSUInteger)row
 {
-    // abstract
-    return @"";
+        return [self.photos[row][FLICKR_PHOTO_DESCRIPTION] description];
 }
 
 // Returns the URL for the table view's cell's image photo. Can be overridden to provide a different photo
