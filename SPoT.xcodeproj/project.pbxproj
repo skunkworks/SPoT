@@ -83,8 +83,6 @@
 		4AA0C103179471F900732D1B /* SPoT */ = {
 			isa = PBXGroup;
 			children = (
-				4AA0C10C179471F900732D1B /* SPoTAppDelegate.h */,
-				4AA0C10D179471F900732D1B /* SPoTAppDelegate.m */,
 				4AA0C115179471F900732D1B /* MainStoryboard.storyboard */,
 				4AA0C118179471F900732D1B /* SPoTViewController.h */,
 				4AA0C119179471F900732D1B /* SPoTViewController.m */,
@@ -96,6 +94,8 @@
 		4AA0C104179471F900732D1B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4AA0C10C179471F900732D1B /* SPoTAppDelegate.h */,
+				4AA0C10D179471F900732D1B /* SPoTAppDelegate.m */,
 				4AA0C105179471F900732D1B /* SPoT-Info.plist */,
 				4AA0C106179471F900732D1B /* InfoPlist.strings */,
 				4AA0C109179471F900732D1B /* main.m */,
