@@ -1,13 +1,13 @@
 //
-//  SPoTViewController.h
+//  StanfordPhotosTVC.h
 //  SPoT
 //
 //  Created by Richard Shin on 7/15/13.
 //  Copyright (c) 2013 Richard Shin. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "FlickrPhotoTVC.h"
 
-@interface SPoTViewController : UIViewController
+@interface StanfordPhotosTVC : FlickrPhotoTVC
 
 @end
