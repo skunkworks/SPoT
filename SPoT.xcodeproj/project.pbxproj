@@ -18,6 +18,7 @@
 		4AA0C114179471F900732D1B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AA0C113179471F900732D1B /* Default-568h@2x.png */; };
 		4AA0C117179471F900732D1B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AA0C115179471F900732D1B /* MainStoryboard.storyboard */; };
 		4AA0C11A179471F900732D1B /* SPoTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA0C119179471F900732D1B /* SPoTViewController.m */; };
+		4AA0C1241794732C00732D1B /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA0C1231794732C00732D1B /* FlickrFetcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,9 @@
 		4AA0C116179471F900732D1B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		4AA0C118179471F900732D1B /* SPoTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPoTViewController.h; sourceTree = "<group>"; };
 		4AA0C119179471F900732D1B /* SPoTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPoTViewController.m; sourceTree = "<group>"; };
+		4AA0C1211794732C00732D1B /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
+		4AA0C1221794732C00732D1B /* FlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrFetcher.h; sourceTree = "<group>"; };
+		4AA0C1231794732C00732D1B /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 		4AA0C103179471F900732D1B /* SPoT */ = {
 			isa = PBXGroup;
 			children = (
+				4AA0C1201794732C00732D1B /* FlickrFetcher */,
 				4AA0C115179471F900732D1B /* MainStoryboard.storyboard */,
 				4AA0C118179471F900732D1B /* SPoTViewController.h */,
 				4AA0C119179471F900732D1B /* SPoTViewController.m */,
@@ -105,6 +110,16 @@
 				4AA0C113179471F900732D1B /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4AA0C1201794732C00732D1B /* FlickrFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				4AA0C1211794732C00732D1B /* FlickrAPIKey.h */,
+				4AA0C1221794732C00732D1B /* FlickrFetcher.h */,
+				4AA0C1231794732C00732D1B /* FlickrFetcher.m */,
+			);
+			path = FlickrFetcher;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +192,7 @@
 				4AA0C10A179471F900732D1B /* main.m in Sources */,
 				4AA0C10E179471F900732D1B /* SPoTAppDelegate.m in Sources */,
 				4AA0C11A179471F900732D1B /* SPoTViewController.m in Sources */,
+				4AA0C1241794732C00732D1B /* FlickrFetcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
