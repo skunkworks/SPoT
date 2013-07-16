@@ -26,7 +26,7 @@
 }
 
 - (NSString *)cellIdentifier {
-    return @"Stanford Photo";
+    return @"Stanford Photos Grouped By Tag";
 }
 
 // Key is the tag name, value is an array of Flickr photo metadata (as NSDictionary objects)
@@ -96,7 +96,7 @@
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
     if (indexPath) {
         // Make sure we have the right segue
-        if ([segue.identifier isEqualToString:@"Show Stanford Photos By Tag"]) {
+        if ([segue.identifier isEqualToString:@"Show Stanford Tagged Photos Detailed"]) {
             // And finally set the photos that we want to display (i.e. photos with this tag)
             if ([segue.destinationViewController respondsToSelector:@selector(setPhotos:)]) {
                 NSString *tagName = self.rowTags[indexPath.row];

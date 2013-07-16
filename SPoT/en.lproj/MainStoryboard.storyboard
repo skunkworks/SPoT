@@ -13,11 +13,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Recently Viewed Photo" textLabel="DKg-ot-inK" detailTextLabel="hL2-9O-dJM" style="IBUITableViewCellStyleSubtitle" id="I9R-wq-zVh">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Recently Viewed Photo" textLabel="DKg-ot-inK" detailTextLabel="hL2-9O-dJM" style="IBUITableViewCellStyleSubtitle" id="I9R-wq-zVh">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKg-ot-inK">
@@ -33,6 +33,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="aqT-7N-Uuc" kind="push" identifier="Show Recent Photo" id="0fN-Gf-hsq"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -44,7 +47,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Lo-0B-t2K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1024" y="41"/>
+            <point key="canvasLocation" x="898" y="41"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="6NA-Lb-5CS">
@@ -71,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5L-yL-msT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2185" y="2"/>
+            <point key="canvasLocation" x="1776" y="-97"/>
         </scene>
         <!--Stanford PhotosTVC - Photos By Tag-->
         <scene sceneID="NaX-ge-wre">
@@ -82,7 +85,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Stanford Photo" textLabel="KcO-IR-cic" detailTextLabel="NeK-ma-7yg" style="IBUITableViewCellStyleSubtitle" id="kL4-gF-3h2">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Stanford Photos Grouped By Tag" textLabel="KcO-IR-cic" detailTextLabel="NeK-ma-7yg" style="IBUITableViewCellStyleSubtitle" id="kL4-gF-3h2">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -103,7 +106,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="Zh2-9e-2gX" kind="push" identifier="Show Stanford Photos By Tag" id="V9Y-Sw-UAO"/>
+                                    <segue destination="Zh2-9e-2gX" kind="push" identifier="Show Stanford Tagged Photos Detailed" id="V9Y-Sw-UAO"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -118,16 +121,16 @@
             </objects>
             <point key="canvasLocation" x="898" y="-526"/>
         </scene>
-        <!--Flickr PhotoTVC-->
+        <!--Stanford Photos DetailedTVC-->
         <scene sceneID="dso-a3-RNl">
             <objects>
-                <tableViewController id="Zh2-9e-2gX" customClass="FlickrPhotoTVC" sceneMemberID="viewController">
+                <tableViewController id="Zh2-9e-2gX" customClass="StanfordPhotosDetailedTVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="61X-ps-qfI">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Flickr Photo" textLabel="1ip-En-LK3" detailTextLabel="6oT-YI-wQB" style="IBUITableViewCellStyleSubtitle" id="wXo-fh-ZqM">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Stanford Tagged Photo" textLabel="1ip-En-LK3" detailTextLabel="6oT-YI-wQB" style="IBUITableViewCellStyleSubtitle" id="wXo-fh-ZqM">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -148,7 +151,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="aqT-7N-Uuc" kind="push" identifier="Show Image" id="csL-EP-kSx"/>
+                                    <segue destination="aqT-7N-Uuc" kind="push" identifier="Show Stanford Tagged Photo" id="csL-EP-kSx"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -221,29 +224,12 @@
             <point key="canvasLocation" x="498" y="41"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="FlickrPhotoTVC" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FlickrPhotoTVC.h"/>
-        </class>
-        <class className="ImageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="RecentlyViewedPhotosTVC" superclassName="FlickrPhotoTVC">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecentlyViewedPhotosTVC.h"/>
-        </class>
-        <class className="StanfordPhotosTVC" superclassName="FlickrPhotoTVC">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StanfordPhotosTVC.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="0fN-Gf-hsq"/>
+    </inferredMetricsTieBreakers>
 </document>

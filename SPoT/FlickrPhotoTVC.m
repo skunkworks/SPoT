@@ -22,7 +22,11 @@
 }
 
 - (NSString *)cellIdentifier {
-    return @"Flickr Photo";
+    return @""; // abstract
+}
+
+- (NSString *)imageViewSegueIdentifier {
+    return @""; // abstract
 }
 
 #pragma mark - Table view data source
@@ -74,7 +78,7 @@
     // Validate index path (index path can be nil if invalid)
     if (indexPath) {
         // Validate that this is the right segue
-        if ([segue.identifier isEqualToString:@"Show Image"]) {
+        if ([segue.identifier isEqualToString:self.imageViewSegueIdentifier]) {
             // We make no assumptions about the class type of the destination controller, only that it responds
             // to the selector setImageURL
             if ([segue.destinationViewController respondsToSelector:@selector(setImageURL:)]) {

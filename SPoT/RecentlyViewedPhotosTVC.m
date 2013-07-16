@@ -19,6 +19,10 @@
     return @"Recently Viewed Photo";
 }
 
+- (NSString *)imageViewSegueIdentifier {
+    return @"Show Recent Photo";
+}
+
 - (void)updateModel
 {
     // Get recent photos and sort them from latest to earliest
