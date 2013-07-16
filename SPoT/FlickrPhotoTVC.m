@@ -83,8 +83,10 @@
                 [segue.destinationViewController setTitle:[self titleForRow:indexPath.row]];
                 
                 RecentlyViewedFlickrPhoto *rvfp = [[RecentlyViewedFlickrPhoto alloc] init];
-                rvfp.id = self.photos[indexPath.row][FLICKR_PHOTO_ID];
+                rvfp.photoDictionary = self.photos[indexPath.row];
                 [rvfp synchronize];
+                NSArray *array = [RecentlyViewedFlickrPhoto getAll];
+                NSLog(@"%@", array);
             }
         }
     }
