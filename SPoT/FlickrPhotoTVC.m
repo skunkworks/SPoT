@@ -8,6 +8,7 @@
 
 #import "FlickrPhotoTVC.h"
 #import "FlickrFetcher.h"
+#import "RecentlyViewedFlickrPhoto.h"
 
 @interface FlickrPhotoTVC ()
 
@@ -80,6 +81,10 @@
                 NSURL *url = [FlickrFetcher urlForPhoto:self.photos[indexPath.row] format:FlickrPhotoFormatLarge];
                 [segue.destinationViewController performSelector:@selector(setImageURL:) withObject:url];
                 [segue.destinationViewController setTitle:[self titleForRow:indexPath.row]];
+                
+                RecentlyViewedFlickrPhoto *rvfp = [[RecentlyViewedFlickrPhoto alloc] init];
+                rvfp.id = self.photos[indexPath.row][FLICKR_PHOTO_ID];
+                [rvfp synchronize];
             }
         }
     }

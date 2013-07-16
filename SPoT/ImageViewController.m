@@ -77,9 +77,9 @@
     
     CGFloat zoomScale;
     if (imageViewRatio < scrollViewRatio) {
-        zoomScale = self.scrollView.frame.size.height / self.imageView.frame.size.height;
+        zoomScale = self.scrollView.bounds.size.height / self.imageView.bounds.size.height;
     } else {
-        zoomScale = self.scrollView.frame.size.width / self.imageView.frame.size.width;
+        zoomScale = self.scrollView.bounds.size.width / self.imageView.bounds.size.width;
     }
 
     self.scrollView.zoomScale = zoomScale;

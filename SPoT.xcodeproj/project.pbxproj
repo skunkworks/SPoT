@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4A0A233B1794844500F63350 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0A233A1794844500F63350 /* ImageViewController.m */; };
+		4A0A233E1794DE2300F63350 /* RecentlyViewedFlickrPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0A233D1794DE2300F63350 /* RecentlyViewedFlickrPhoto.m */; };
 		4AA0C0FE179471F900732D1B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA0C0FD179471F900732D1B /* UIKit.framework */; };
 		4AA0C100179471F900732D1B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA0C0FF179471F900732D1B /* Foundation.framework */; };
 		4AA0C102179471F900732D1B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA0C101179471F900732D1B /* CoreGraphics.framework */; };
@@ -26,6 +27,8 @@
 /* Begin PBXFileReference section */
 		4A0A23391794844500F63350 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		4A0A233A1794844500F63350 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		4A0A233C1794DE2300F63350 /* RecentlyViewedFlickrPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentlyViewedFlickrPhoto.h; sourceTree = "<group>"; };
+		4A0A233D1794DE2300F63350 /* RecentlyViewedFlickrPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentlyViewedFlickrPhoto.m; sourceTree = "<group>"; };
 		4AA0C0FA179471F900732D1B /* SPoT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPoT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AA0C0FD179471F900732D1B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4AA0C0FF179471F900732D1B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -101,6 +104,8 @@
 				4AA0C115179471F900732D1B /* MainStoryboard.storyboard */,
 				4A0A23391794844500F63350 /* ImageViewController.h */,
 				4A0A233A1794844500F63350 /* ImageViewController.m */,
+				4A0A233C1794DE2300F63350 /* RecentlyViewedFlickrPhoto.h */,
+				4A0A233D1794DE2300F63350 /* RecentlyViewedFlickrPhoto.m */,
 				4AA0C104179471F900732D1B /* Supporting Files */,
 			);
 			path = SPoT;
@@ -205,6 +210,7 @@
 				4AA0C127179473B000732D1B /* FlickrPhotoTVC.m in Sources */,
 				4AA0C12A1794742700732D1B /* StanfordPhotosTVC.m in Sources */,
 				4A0A233B1794844500F63350 /* ImageViewController.m in Sources */,
+				4A0A233E1794DE2300F63350 /* RecentlyViewedFlickrPhoto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
