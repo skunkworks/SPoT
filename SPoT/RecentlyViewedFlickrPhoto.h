@@ -13,11 +13,9 @@
 // Flickr photo dictionary
 @property (strong, nonatomic) NSDictionary *photoDictionary;
 
-// Set automatically when photoDictionary is set
-@property (readonly, nonatomic) NSDate *viewed;
-
  // Saves record to permanent store
 - (void)synchronize;
 
+// Returns an NSArray of all recently viewed photos, sorted descending
 + (NSArray *)getAll; // of RecentlyViewedFlickrPhoto *
 @end

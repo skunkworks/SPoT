@@ -64,7 +64,7 @@
     NSMutableDictionary *mutableDictionaryFromUserSettings = [[[NSUserDefaults standardUserDefaults] dictionaryForKey:RECENTLY_VIEWED_PHOTOS_KEY] mutableCopy];
     if (!mutableDictionaryFromUserSettings) mutableDictionaryFromUserSettings = [[NSMutableDictionary alloc] init];
     
-    // Add this record to the dictionary
+    // Add this record to the dictionary (or update if it already exists)
     mutableDictionaryFromUserSettings[self.photoDictionary[FLICKR_PHOTO_ID]] = [self asPropertyList];
     
     // Prune earliest record if we've reached max recently viewed photo records
@@ -91,7 +91,7 @@
     [[NSUserDefaults standardUserDefaults] setObject:mutableDictionaryFromUserSettings forKey:RECENTLY_VIEWED_PHOTOS_KEY];
 }
 
-// Returns an NSArray of all recently viewed photos
+// Returns an NSArray of all recently viewed photos, sorted descending
 + (NSArray *)getAll
 {
     NSMutableArray *mutableArray = [[NSMutableArray alloc] init];
@@ -102,7 +102,9 @@
         if (rvfp) [mutableArray addObject:rvfp];
     }
     
-    return [mutableArray copy];
+    return [mutableArray sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return [[obj2 valueForKey:@"viewed"] compare:[obj1 valueForKey:@"viewed"]];
+    }];
 }
 
 @end

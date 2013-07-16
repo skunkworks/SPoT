@@ -85,8 +85,6 @@
                 RecentlyViewedFlickrPhoto *rvfp = [[RecentlyViewedFlickrPhoto alloc] init];
                 rvfp.photoDictionary = self.photos[indexPath.row];
                 [rvfp synchronize];
-                NSArray *array = [RecentlyViewedFlickrPhoto getAll];
-                NSLog(@"%@", array);
             }
         }
     }

@@ -22,9 +22,7 @@
 - (void)updateModel
 {
     // Get recent photos and sort them from latest to earliest
-    NSArray *recentlyViewedPhotos = [[RecentlyViewedFlickrPhoto getAll] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-        return [[obj2 valueForKey:@"viewed"] compare:[obj1 valueForKey:@"viewed"]];
-    }];
+    NSArray *recentlyViewedPhotos = [RecentlyViewedFlickrPhoto getAll];
     
     // And set the model appropriately
     self.photos = [recentlyViewedPhotos valueForKey:@"photoDictionary"];
