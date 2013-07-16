@@ -10,6 +10,7 @@
 #import "RecentlyViewedFlickrPhoto.h"
 
 @interface RecentlyViewedPhotosTVC ()
+@property (strong, nonatomic) NSArray *recentlyViewedPhotos;
 @end
 
 @implementation RecentlyViewedPhotosTVC
@@ -23,13 +24,16 @@
     return @"Show Recent Photo";
 }
 
+- (NSString *)subtitleForRow:(NSUInteger)row {
+    RecentlyViewedFlickrPhoto *photo = (RecentlyViewedFlickrPhoto *)self.recentlyViewedPhotos[row];
+    return [photo.viewed description];
+}
+
 - (void)updateModel
 {
-    // Get recent photos and sort them from latest to earliest
-    NSArray *recentlyViewedPhotos = [RecentlyViewedFlickrPhoto getAll];
-    
-    // And set the model appropriately
-    self.photos = [recentlyViewedPhotos valueForKey:@"photoDictionary"];
+    self.recentlyViewedPhotos = [RecentlyViewedFlickrPhoto getAllSortedAscending:NO];
+    // Converts between our model recentlyViewedPhotos and the model necessary to display data in our superclass FlickrPhotoTVC
+    self.photos = [self.recentlyViewedPhotos valueForKeyPath:@"photoDictionary"];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
