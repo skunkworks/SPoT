@@ -84,20 +84,19 @@
     while ([mutableUserSettingsDictionary count] > MAX_RECENT_PHOTOS) {
 
         // Have to iterate through all records and find the earliest photo record to pop
-        RecentlyViewedFlickrPhoto *photoToRemove = self;
+        NSString *idOfEarliestPhoto = self.photoDictionary[FLICKR_PHOTO_ID];
+        NSDate *earliestDate = self.viewed;
         
-        for (id plist in [mutableUserSettingsDictionary allValues]) {
-            RecentlyViewedFlickrPhoto *photo = [[RecentlyViewedFlickrPhoto alloc] initFromPropertyList:plist];
-            // If there's an invalid record found, remove it instead!
-            if (!photo) {
-                photoToRemove = photo;
-                break;
-            } else if ([[photo.viewed earlierDate:photoToRemove.viewed] isEqualToDate:photo.viewed]) {
-                photoToRemove = photo;
+        for (id key in [mutableUserSettingsDictionary allKeys]) {
+            NSDictionary *plistDictionary = (NSDictionary *)mutableUserSettingsDictionary[key];
+            NSDate *photoDate = plistDictionary[RECENT_PHOTO_VIEW_DATE];
+            if ([photoDate compare:earliestDate] == NSOrderedAscending) {
+                idOfEarliestPhoto = key;
+                earliestDate = photoDate;
             }
         }
         
-        [mutableUserSettingsDictionary removeObjectForKey:photoToRemove.photoDictionary[FLICKR_PHOTO_ID]];
+        [mutableUserSettingsDictionary removeObjectForKey:idOfEarliestPhoto];
     }
     
     // Propagate any modifications to the permanent store
