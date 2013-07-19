@@ -24,11 +24,6 @@
     return @"Show Recent Photo";
 }
 
-- (NSString *)subtitleForRow:(NSUInteger)row {
-    RecentlyViewedFlickrPhoto *photo = (RecentlyViewedFlickrPhoto *)self.recentlyViewedPhotos[row];
-    return [photo.viewed description];
-}
-
 - (void)updateModel
 {
     self.recentlyViewedPhotos = [RecentlyViewedFlickrPhoto getAllSortedAscending:NO];

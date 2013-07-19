@@ -99,11 +99,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "SPoT/RecentlyViewedPhotosTVC.m"
-         timestampString = "395699670.106867"
+         timestampString = "395901669.911309"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "41"
-         endingLineNumber = "41"
+         startingLineNumber = "36"
+         endingLineNumber = "36"
          landmarkName = "-viewWillAppear:"
          landmarkType = "5">
       </FileBreakpoint>
